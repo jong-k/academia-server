@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forums",
+  "info": {
+    "singularName": "forum",
+    "pluralName": "forums",
+    "displayName": "Forum",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "place": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "host": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "time": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "forums"
+    }
+  }
+}
